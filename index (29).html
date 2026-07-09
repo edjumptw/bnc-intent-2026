@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>建橋雲智 BNC — 創始元老意向表</title>
+<style>
+  :root {
+    --navy: #1A2E4A;
+    --gold: #C9A84C;
+    --bg: #F7F6F3;
+    --text: #222;
+    --muted: #666;
+    --border: #DDD;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 24px 16px 60px;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; }
+  .header {
+    background: var(--navy);
+    border-radius: 12px;
+    padding: 28px 24px;
+    margin-bottom: 24px;
+  }
+  .badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    color: var(--gold);
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 8px;
+  }
+  .header p {
+    color: #ccd2dc;
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.6;
+  }
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    padding: 24px;
+  }
+  .field { margin-bottom: 20px; }
+  label.field-label {
+    display: block;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  input[type="text"], input[type="tel"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    background: #fff;
+    color: var(--text);
+  }
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--navy);
+  }
+  textarea { resize: vertical; }
+  .chip-group { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .stack { display: flex; flex-direction: column; gap: 8px; }
+  .option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .option.tier4 {
+    border: 2px solid var(--gold);
+    background: rgba(201,168,76,0.08);
+    font-weight: 600;
+  }
+  .sub-input { margin-top: 8px; }
+  .divider { border-top: 1px solid var(--border); padding-top: 20px; margin-top: 4px; }
+  button.submit {
+    width: 100%;
+    margin-top: 8px;
+    background: var(--navy);
+    color: var(--gold);
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  button.submit:disabled { opacity: 0.6; cursor: default; }
+  #status { margin-top: 16px; font-size: 14px; text-align: center; }
+  #status.success { color: #1a7a3c; }
+  #status.error { color: #b3261e; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <span class="badge">建橋雲智 BNC</span>
+    <h1>創始元老意向表</h1>
+    <p>台灣對接大陸各區域的完整建橋藍圖，據點持續擴展，一城一基地</p>
+  </div>
+
+  <div class="card">
+    <form id="intentForm">
+      <div class="field">
+        <label class="field-label">姓名</label>
+        <input type="text" name="name" placeholder="王小明" required />
+      </div>
+      <div class="field">
+        <label class="field-label">聯絡電話</label>
+        <input type="tel" name="phone" placeholder="09xx-xxx-xxx" required />
+      </div>
+      <div class="field">
+        <label class="field-label">Email</label>
+        <input type="email" name="email" placeholder="name@company.com" required />
+      </div>
+      <div class="field">
+        <label class="field-label">WeChat ID（選填）</label>
+        <input type="text" name="wechat" />
+      </div>
+      <div class="field">
+        <label class="field-label">目前所在地區</label>
+        <input type="text" name="location" placeholder="例：高雄" />
+      </div>
+      <div class="field">
+        <label class="field-label">主要產業／業務</label>
+        <input type="text" name="industry" placeholder="例：食品製造、五金零售" />
+      </div>
+
+      <div class="field">
+        <label class="field-label">有興趣對接的大陸區域（可複選）</label>
+        <div class="chip-group">
+          <label class="chip"><input type="checkbox" name="region" value="成都" /> 成都</label>
+          <label class="chip"><input type="checkbox" name="region" value="山東" /> 山東</label>
+          <label class="chip"><input type="checkbox" name="region" value="杭州" /> 杭州</label>
+          <label class="chip"><input type="checkbox" name="region" value="武漢" /> 武漢</label>
+          <label class="chip"><input type="checkbox" name="region" value="尚未確定" /> 尚未確定</label>
+        </div>
+        <input class="sub-input" type="text" name="region_other" placeholder="其他區域，請填寫" />
+      </div>
+
+      <div class="field">
+        <label class="field-label">加入 BNC 的主要目標（可複選）</label>
+        <div class="stack">
+          <label class="option"><input type="checkbox" name="goal" value="拓展大陸市場通路" /> 拓展大陸市場通路</label>
+          <label class="option"><input type="checkbox" name="goal" value="尋找當地信任夥伴與資源" /> 尋找當地信任夥伴與資源</label>
+          <label class="option"><input type="checkbox" name="goal" value="建立個人品牌與IP" /> 建立個人品牌與 IP</label>
+          <label class="option"><input type="checkbox" name="goal" value="跨境資金與供應鏈整合" /> 跨境資金與供應鏈整合</label>
+          <label class="option"><input type="checkbox" name="goal" value="爭取商務特許經營機會" /> 爭取商務特許經營機會</label>
+        </div>
+        <input class="sub-input" type="text" name="goal_other" placeholder="其他目標，請說明" />
+      </div>
+
+      <div class="field divider">
+        <label class="field-label">意向會員層級</label>
+        <div class="stack">
+          <label class="option"><input type="radio" name="tier" value="L1 通行會員 NT$3,600" required /> L1 通行會員 — NT$3,600</label>
+          <label class="option"><input type="radio" name="tier" value="L2 活躍會員 NT$8,800" /> L2 活躍會員 — NT$8,800（30 秒電梯簡報）</label>
+          <label class="option"><input type="radio" name="tier" value="L3 商務會員 NT$19,800" /> L3 商務會員 — NT$19,800（5 分鐘專題分享）</label>
+          <label class="option tier4"><input type="radio" name="tier" value="L4 首席建橋官 NT$39,600" /> L4 首席建橋官（商務特許經營權）— NT$39,600</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">想詢問的問題（選填）</label>
+        <textarea name="question" rows="3" placeholder="有任何想進一步了解的部分，歡迎留言"></textarea>
+      </div>
+
+      <button type="submit" class="submit" id="submitBtn">送出意向</button>
+      <div id="status"></div>
+    </form>
+  </div>
+</div>
+
+<script>
+  const form = document.getElementById('intentForm');
+  const statusEl = document.getElementById('status');
+  const submitBtn = document.getElementById('submitBtn');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = '送出中...';
+    statusEl.textContent = '';
+    statusEl.className = '';
+
+    const formData = new FormData(form);
+    const regions = formData.getAll('region').join('、');
+    const goals = formData.getAll('goal').join('、');
+
+    const submitData = new FormData();
+    submitData.append('_subject', '【BNC 意向表】新填寫通知');
+    submitData.append('name', formData.get('name'));
+    submitData.append('phone', formData.get('phone'));
+    submitData.append('email', formData.get('email'));
+    submitData.append('wechat', formData.get('wechat'));
+    submitData.append('location', formData.get('location'));
+    submitData.append('industry', formData.get('industry'));
+    submitData.append('region', regions);
+    submitData.append('region_other', formData.get('region_other'));
+    submitData.append('goal', goals);
+    submitData.append('goal_other', formData.get('goal_other'));
+    submitData.append('tier', formData.get('tier'));
+    submitData.append('question', formData.get('question'));
+
+    try {
+      const res = await fetch('https://formspree.io/f/mbdvvknw', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: submitData
+      });
+      if (res.ok) {
+        statusEl.textContent = '意向已送出，感謝填寫，我們會盡快與您聯繫。';
+        statusEl.className = 'success';
+        form.reset();
+      } else {
+        statusEl.textContent = '送出失敗，請稍後再試一次。';
+        statusEl.className = 'error';
+      }
+    } catch (err) {
+      statusEl.textContent = '送出失敗，請確認網路連線後再試一次。';
+      statusEl.className = 'error';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = '送出意向';
+    }
+  });
+</script>
+</body>
+</html>
